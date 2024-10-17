@@ -1,6 +1,8 @@
 import express, { json } from "express"
 import cors from "cors"
 import { listRouter } from "./routes/lists"
+import dotenv from "dotenv"
+dotenv.config()
 
 const SERVER = express()
 const PORT = process.env.PORT ?? 3000
@@ -16,7 +18,7 @@ const serverStart = async () => {
       console.log(`Server running http://localhost:${PORT}`)
     })
   } catch (error) {
-    console.log(`Error for start the server, ${error}`)
+    console.error(`Error for start the server, ${error}`)
     process.exit(1)
   }
 }
