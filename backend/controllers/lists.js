@@ -45,7 +45,7 @@ class listController {
       if (!deletedList) {
         return res.status(404).json({ message: "List not found" })
       }
-      return res.status(200).json(deletedList);
+      return res.status(200).json(deletedList)
     } catch (error) {
       res.status(500).json({ message: `Error deleting list ${error.message}` })
     }
