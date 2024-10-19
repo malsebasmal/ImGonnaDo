@@ -13,6 +13,7 @@ const connect = async () => {
     console.log("connect DB")
   } catch (error) {
     console.log(`Error connecting to mongoDB ${error}`)
+    throw error
   }
 }
 
@@ -25,6 +26,7 @@ class listModel {
       return lists
     } catch (error) {
       console.error(`Error getting all lists ${error.message}`)
+      throw error
     }
   }
 
@@ -36,6 +38,7 @@ class listModel {
       return list
     } catch (error) {
       console.error(`Error getting one list ${error.message}`)
+      throw error
     }
   }
 
@@ -47,6 +50,7 @@ class listModel {
       return newList
     } catch (error) {
       console.error(`Error creating one list ${error.message}`)
+      throw error
     }
   }
 
@@ -58,6 +62,7 @@ class listModel {
       return deletedList
     } catch (error) {
       console.error(`Error deleting one list ${error.message}`)
+      throw error
     }
   }
 
@@ -69,6 +74,7 @@ class listModel {
       return updatedList
     } catch (error) {
       console.error(`Error updating one list ${error.message}`)
+      throw error
     }
   }
 
@@ -85,6 +91,7 @@ class listModel {
       return updatedList
     } catch (error) {
       console.error(`Error creating task for list: ${error.message}`)
+      throw error
     }
   }
 
@@ -101,9 +108,9 @@ class listModel {
       return deletedTask
     } catch (error) {
       console.error(`Error deleting task for list: ${error.message}`)
+      throw error
     }
   }
-
 
   static async updatedTask({ taskId, data }) {
     await connect()
@@ -117,6 +124,7 @@ class listModel {
       return updatedTask
     } catch (error) {
       console.error(`Error updating task for list: ${error.message}`)
+      throw error
     }
   }
 }
