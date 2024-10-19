@@ -7,7 +7,7 @@ const taskSchema = new Schema({
     required: true
   },
   dateRealice: {
-    type: Date.now
+    type: Date
   },
   check: {
     type: Boolean,
@@ -21,7 +21,7 @@ const taskSchema = new Schema({
 })
 
 taskSchema.pre("save", function(next) {
-  if(this.check) {
+  if(this.check && !this.dateRealice) {
     this.dateRealice = new Date()
   }
   next()

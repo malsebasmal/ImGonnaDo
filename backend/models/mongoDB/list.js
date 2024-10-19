@@ -1,10 +1,9 @@
+import mongoose from "mongoose"
 import { List } from "./schemas/list.js"
 import { Task } from "./schemas/task.js"
 import dotenv from "dotenv"
 dotenv.config()
 
-
-const mongoose = require("mongoose")
 const URI = process.env.MONGO_URL
 
 const connect = async () => {

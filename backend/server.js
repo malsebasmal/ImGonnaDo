@@ -1,6 +1,6 @@
 import express, { json } from "express"
 import cors from "cors"
-import { listRouter } from "./routes/lists"
+import { listRouter } from "./routes/lists.js"
 import dotenv from "dotenv"
 dotenv.config()
 
