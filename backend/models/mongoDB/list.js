@@ -45,7 +45,7 @@ class listModel {
     await connect()
 
     try {
-      const newList = await List.create({ data })
+      const newList = await List.create(data)
       return newList
     } catch (error) {
       console.error(`Error creating one list ${error.message}`)
@@ -69,7 +69,7 @@ class listModel {
     await connect()
 
     try {
-      const updatedList = await List.findByIdAndUpdate({ id, data }, { new: true })
+      const updatedList = await List.findByIdAndUpdate(id, data, { new: true })
       return updatedList
     } catch (error) {
       console.error(`Error updating one list ${error.message}`)
@@ -81,8 +81,8 @@ class listModel {
     await connect()
 
     try {
-      const newTask = await Task.create(data)
-      const updatedList = await Task.findByIdAndUpdate(
+      const newTask = await Task.create({ ...data, list: id })
+      const updatedList = await List.findByIdAndUpdate(
         id,
         { $push: { task: newTask._id } },
         { new: true }

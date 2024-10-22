@@ -20,7 +20,8 @@ const listSchema = new Schema({
   },
   task: [{
     type: Schema.Types.ObjectId,
-    ref: "Task"
+    ref: "Task",
+    default: []
   }]
 })
 
