@@ -1,6 +1,6 @@
-import { Router } from "express";
+import { Router } from "express"
 import { listController } from "../controllers/lists.js"
-import { taskController } from "../controllers/tasks.js";
+import { taskController } from "../controllers/tasks.js"
 import { listModel } from "../models/mongoDB/list.js"
 
 const listRouter = Router()
@@ -14,9 +14,9 @@ listRouter.get("/:id", listCtrl.getById)
 listRouter.delete("/:id", listCtrl.delete)
 listRouter.patch("/:id", listCtrl.update)
 
-listRouter.post("/:id/task", taskCtrl.create)
-listRouter.delete("/:id/task/:taskId", taskCtrl.delete)
-listRouter.patch("/:id/task/:taskId", taskCtrl.update)
+listRouter.post("/:id/tasks", taskCtrl.create)
+listRouter.delete("/:id/tasks/:taskId", taskCtrl.delete)
+listRouter.patch("/:id/tasks/:taskId", taskCtrl.update)
 
 export {
   listRouter

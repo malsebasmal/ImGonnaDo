@@ -57,6 +57,7 @@ class listModel {
     await connect()
 
     try {
+      await Task.deleteMany({ list: id })
       const deletedList = await List.findByIdAndDelete(id)
       return deletedList
     } catch (error) {
@@ -81,6 +82,10 @@ class listModel {
     await connect()
 
     try {
+      const list = await List.findById(id).populate("task")
+      if (list.task.length >= list.limitNumber) {
+        throw new Error(`Cannot add more tasks. Limit of ${list.limitNumber} tasks reached.`)
+      }
       const newTask = await Task.create({ ...data, list: id })
       const updatedList = await List.findByIdAndUpdate(
         id,

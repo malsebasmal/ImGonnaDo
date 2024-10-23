@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose"
 const { Schema, model } = mongoose
 
 const taskSchema = new Schema({
@@ -32,11 +32,3 @@ const Task = model("Task", taskSchema)
 export {
   Task
 }
-
-// taskSchema.pre('updateOne', function(next) {
-//   const update = this.getUpdate();
-//   if (update.check === true) {
-//     update.dateRealice = new Date()
-//   }
-//   next();
-// });
