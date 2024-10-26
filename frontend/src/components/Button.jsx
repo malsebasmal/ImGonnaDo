@@ -1,9 +1,18 @@
-function Button() {
+import PropTypes from "prop-types"
+
+function Button({ styles, action, text, icon  }) {
   return (
-    // Ths is for add, remove and edit list
-    <button>Text General</button>
+    <button className={styles}>Text General</button>
   )
 }
+
+Button.propTypes = {
+  styles: PropTypes.string,
+  action: PropTypes. string,
+  text: PropTypes.string,
+  icon: PropTypes.string
+}
+
 
 export {
   Button
