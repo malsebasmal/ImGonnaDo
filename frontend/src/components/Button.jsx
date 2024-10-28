@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 
 function Button({ styles, action, text, icon  }) {
   return (
-    <button className={styles}>Text General</button>
+    <button className={styles}>{text}</button>
   )
 }
 

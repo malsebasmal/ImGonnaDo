@@ -5,15 +5,17 @@ import { Button } from "../../Button.jsx"
 
 function AllListIndex() {
   return (
-    <section className="width:full flex flex-direction:col gap:10 ai:center">
-      <Title styles="f:5rem"/>
+    <section className="max-w:60rem w:100% flex flex:col gap:2rem ai:center">
+      <Title styles="f:6rem color:#ffbffa"/>
 
-      <AllLists />
+      <div className="max-w:20rem w:100% flex flex:col ai:center">
+        <AllLists />
+      </div>
 
-      <div className="flex flex:wrap gap:0.5rem ">
-        <Button styles="px:1rem py:0.5rem bg:gray r:50%" action="add" text="New" icon=""/>
-        <Button styles="px:1rem py:0.5rem bg:gray r:50%" action="remove" text="Remove" icon=""/>
-        <Button styles="px:1rem py:0.5rem bg:gray r:50%" action="edit" text="Edit" icon=""/>
+      <div className="flex flex:col max-w:20rem w:100% gap:1rem ">
+        <Button styles="px:1rem py:0.5rem b:5px|solid|#34b233 bg:#33b23340 color:#ffbffa r:5rem f:1.5em" action="add" text="New" icon=""/>
+        <Button styles="px:1rem py:0.5rem b:5px|solid|#ce0000 bg:#ce000040 color:#ffbffa r:5rem f:1.5em" action="remove" text="Remove" icon=""/>
+        <Button styles="px:1rem py:0.5rem b:5px|solid|#5783db bg:#5783db40 color:#ffbffa r:5rem f:1.5em" action="edit" text="Edit" icon=""/>
       </div>
     </section>
   )

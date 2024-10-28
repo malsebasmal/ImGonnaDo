@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource/just-me-again-down-here": "^5.1.0",
+    "@fontsource/just-me-again-down-here": "5.1.0",
     "@master/css": "1.37.8",
     "@master/normal.css": "3.1.0",
     "react": "18.3.1",
