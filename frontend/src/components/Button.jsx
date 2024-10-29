@@ -1,15 +1,15 @@
 import PropTypes from "prop-types"
 
-function Button({ styles, action, text }) {
+function Button({ styles, onClick, text }) {
   return (
-    <button className={styles}>{text}</button>
+    <button onClick={onClick} className={styles}>{text}</button>
   )
 }
 
 Button.propTypes = {
   styles: PropTypes.string,
-  action: PropTypes. string,
   text: PropTypes.string,
+  onClick: PropTypes.func.isRequired
 }
 
 
