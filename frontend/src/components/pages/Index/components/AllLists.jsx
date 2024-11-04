@@ -1,9 +1,8 @@
 import { TargetList } from "../../../TargetList.jsx"
-// import { fetchData } from "../../../../API/api.jsx"
 import { useState, useEffect } from "react"
 
 
-function AllLists(){
+function AllLists() {
   const API_URL = "http://localhost:3000"
   const [data, setData] = useState([])
   useEffect(() => {
@@ -20,8 +19,6 @@ function AllLists(){
 
     fetchData()
   }, [])
-
-
 
   return (
     <ul className="w:100% flex flex:column gap:1rem">
