@@ -4,8 +4,9 @@
 
 html {
   @apply bg-[#131313];
-  /* @apply flex flex-col justify-center items-center */
 }
-body {
 
+#root {
+  display: flex;
+  justify-content: center;
 }

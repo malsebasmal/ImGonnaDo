@@ -10,7 +10,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        wht: "#fdfbfb;"
+        cWhite: "#fdfbfb",
+        cPink: "#fa6ee3",
+        cBlack: "#131313"
       }
     },
   },

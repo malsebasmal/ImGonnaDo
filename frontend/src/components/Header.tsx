@@ -3,7 +3,7 @@ import { Navbar } from "flowbite-react"
 
 function Header() {
   return (
-    <Navbar className="absolute w-full" fluid rounded>
+    <Navbar className="absolute w-full lg:w-[920px]" fluid rounded>
       Im gonna do
       <Navbar.Toggle />
       <Navbar.Collapse>
