@@ -1,6 +1,6 @@
 function Title() {
   return (
-    <h1 className="text-cWhite text-7xl text-center">Im Gonna Do</h1>
+    <h1 className="text-cWhite text-7xl font-black text-center">Im Gonna Do</h1>
   )
 }
 

@@ -12,7 +12,8 @@ export default {
       colors: {
         cWhite: "#fdfbfb",
         cPink: "#fa6ee3",
-        cBlack: "#131313"
+        cBlack: "#131313",
+        cGreen: "#00b96d"
       }
     },
   },
