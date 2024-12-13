@@ -1,9 +1,10 @@
 import { Link } from "react-router"
 import DeleteIcon from "@/icons/DeleteIcon"
 
-function CardList({name, description} : {name: string, description: string}) {
+
+function CardList({name, description, id} : {name: string, description: string, id: string}) {
   return (
-    <Link to="#" className="w-full bg-cPink hover:bg-cWhite hover:text-cPink text-cBlack py-2 px-3 rounded flex flex-col gap-2">
+    <Link to={`group/${id}`} className="w-full bg-cPink hover:bg-cWhite hover:text-cPink text-cBlack py-2 px-3 rounded flex flex-col gap-2">
       <div className="flex flex-row justify-between">
         <p className="opacity-75 font-medium">5/20 tareas completadas</p>
         {/* cambiarlo por tres puntos donde me aparezca lo de editar y borrar */}

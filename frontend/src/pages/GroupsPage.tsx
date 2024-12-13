@@ -7,7 +7,6 @@ import LoadingIcon from "@/icons/LoadingIcon"
 
 function GroupsPage() {
   const { data, loading } = useFetch(import.meta.env.VITE_LISTS_API_URL)
-  console.log(data)
 
   return (
     <Section className="gap-10">
@@ -15,9 +14,9 @@ function GroupsPage() {
       <div className="w-full flex">
         <ul className="w-full flex flex-col gap-4 h-96 overflow-auto">
           {loading && <LoadingIcon color="pink"/>}
-          {data?.map((list) => (
+          {data.map((list) => (
             <li key={list._id}>
-              <CardList name={list.name} description={list.description} />
+              <CardList id={list._id} name={list.name} description={list.description} />
             </li>
           ))}
         </ul>
