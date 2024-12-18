@@ -1,46 +1,48 @@
-import useFetch from "@/api/useFetch"
 import Section from "@/components/Section"
 import SubTitle from "@/components/SubTitle"
+import LoadingIcon from "@/icons/LoadingIcon"
+import TableList from "@/components/Table"
+import { initialStateList, List } from "@/interfaces/ApiInterfaces"
+import axios from "axios"
+import { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react"
 
 function GroupPage() {
-  const { id } = useParams()
-  const { data, loading } = useFetch(`${import.meta.env.VITE_LISTS_API_URL}/${id}`)
-  console.log(data)
+  const { id } = useParams()  
+  const [list, setList] = useState<List>(initialStateList)
+  const [loading, setLoading] = useState(true) 
+  const getList = async () => {
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_LISTS_API_URL}/${id}`)
+      setList(response.data)
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setLoading(false)
+    }
+  }
+  useEffect(() => {
+    getList()
+  }, [])
 
   return (
     <Section className="">
-      <SubTitle name={data.name} />
-      <p className="text-white">
-        {data.description}
-      </p>
-      {/* Progress bar */}
-      {/* Input for search tasks */}
-      
-      <div className="h-96 overflow-auto">
-        <Table>
-          <TableHead>
-            <TableHeadCell>N°</TableHeadCell>
-            <TableHeadCell>Thing you do</TableHeadCell>
-            <TableHeadCell>Date realice</TableHeadCell>
-            <TableHeadCell>Check</TableHeadCell>
-          </TableHead>
-          <TableBody>
-            {data.task?.map((task) => (
-              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                <TableCell>1</TableCell>
-                <TableCell>{task.name}</TableCell>
-                <TableCell>{task.dateRealice}</TableCell>
-                <TableCell>
-                  <input type="checkbox" name="" id="" />
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </div>
+      {loading ? (
+        <LoadingIcon color="pink" />
+      ) : (
+        <>
+          <SubTitle name={list.name} />
+          <p className="text-white">
+            {list.description}
+          </p>
+          {/* Progress bar */}
+          {/* Input for search tasks */}
 
+          <div className="h-96 overflow-auto">
+            <TableList tasks={list.task} />
+          </div>
+        </>
+      )}
     </Section>
   )
 }
