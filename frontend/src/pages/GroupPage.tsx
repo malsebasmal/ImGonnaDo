@@ -2,6 +2,7 @@ import Section from "@/components/Section"
 import SubTitle from "@/components/SubTitle"
 import LoadingIcon from "@/icons/LoadingIcon"
 import TableList from "@/components/Table"
+import Button from "@/components/Button"
 import { initialStateList, List } from "@/interfaces/ApiInterfaces"
 import axios from "axios"
 import { useEffect, useState } from "react"
@@ -32,15 +33,17 @@ function GroupPage() {
       ) : (
         <>
           <SubTitle name={list.name} />
-          <p className="text-white">
+          <p className="text-cWhite text-lg font-semibold text-center">
             {list.description}
           </p>
           {/* Progress bar */}
           {/* Input for search tasks */}
 
-          <div className="h-96 overflow-auto">
+          <div className="h-[22rem] w-full">
             <TableList tasks={list.task} />
           </div>
+
+          <Button className="mt-10 w-full bg-cBlue text-cWhite hover:bg-cWhite hover:text-cBlue font-bold text-xl rounded-full py-2 px-3" text="add task" />
         </>
       )}
     </Section>

@@ -2,9 +2,8 @@ import { Task } from "@/interfaces/ApiInterfaces"
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow, Checkbox } from "flowbite-react"
 
 function TableList({tasks} : {tasks: Task}) {
-  console.log(tasks)
   return (
-    <Table>
+    <Table className="w-full max-h-[22rem] overflow-auto">
       <TableHead>
         <TableHeadCell>N°</TableHeadCell>
         <TableHeadCell>Thing you do</TableHeadCell>
@@ -13,7 +12,7 @@ function TableList({tasks} : {tasks: Task}) {
       </TableHead>
       <TableBody>
         {tasks.map((task, index) => (
-          <TableRow key={index} className="bg-white dark:border-gray-700 dark:bg-gray-800">
+          <TableRow key={index} className="border-gray-700 bg-gray-800">
             <TableCell>{index + 1}</TableCell>
             <TableCell>{task.name}</TableCell>
             <TableCell>{task.dateRealice}</TableCell>

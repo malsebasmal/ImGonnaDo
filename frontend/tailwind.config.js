@@ -13,7 +13,8 @@ export default {
         cWhite: "#fdfbfb",
         cPink: "#fa6ee3",
         cBlack: "#131313",
-        cGreen: "#00b96d"
+        cGreen: "#00b96d",
+        cBlue: "#008ffd"
       }
     },
   },
