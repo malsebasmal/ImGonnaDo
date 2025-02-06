@@ -1,5 +1,7 @@
 @charset "UTF-8";
 @import '@fontsource-variable/exo-2';
+@import "tailwindcss"
+
 /*
 
   Con este reset vamos a resolver:
