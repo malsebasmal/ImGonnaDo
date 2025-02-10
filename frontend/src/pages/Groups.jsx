@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Section } from "../layouts/Section";
 
-export const Group = () => {
+export const Groups = () => {
   useEffect(() => {
     
   }, [])
