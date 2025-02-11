@@ -2,7 +2,12 @@ import axios from "axios"
 import { API } from "../fakeApi/api"
 
 const getAll = () => {
-  const request= axios.get(API)
+  const request = axios.get(API)
+  return request.then(response => response.data)
+}
+
+const getById = (id) => {
+  const request = axios.get(`${API}/${id}`)
   return request.then(response => response.data)
 }
 
@@ -16,8 +21,15 @@ const update = (id, newObject) => {
   return request.then(response => response.data)
 }
 
-export { 
+const remove = (id) => {
+  const request = axios.delete(`${API}/${id}`)
+  return request.then(response => response.data)
+}
+
+export {
   getAll,
+  getById,
   create,
-  update
+  update,
+  remove
 }
