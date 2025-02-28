@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import '@fontsource-variable/exo-2';
-@import "tailwindcss"
+@import "tailwindcss";
 
 /*
 
@@ -149,7 +149,7 @@ body {
   min-height: 100vh;
   font-size: 100%;
   font-family: var(--tipo-principal);
-  color: var(--negro);
+  color: var(--blanco);
   /* opcional */
   /* line-height: 1.4em; */
   /* opcional */
