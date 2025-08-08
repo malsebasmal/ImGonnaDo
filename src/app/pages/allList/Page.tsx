@@ -15,10 +15,10 @@ const Page = () => {
             <List />
           </section>
           <div className="w-full flex flex-col items-center justify-center gap-4">
-            <button className="w-full rounded-full p-2 border-2 border-blue-700 hover:bg-blue-400 transition-all duration-200 ease-out">
+            <button className="w-full rounded-full p-2 border-2 border-blue-700 hover:bg-blue-400 transition-all duration-200 ease-out cursor-pointer">
               add list
             </button>
-            <button className="w-full rounded-full p-2 border-2 border-red-700 hover:bg-red-400 transition-all duration-200 ease-out">
+            <button className="w-full rounded-full p-2 border-2 border-red-700 hover:bg-red-400 transition-all duration-200 ease-out cursor-pointer">
               remove list
             </button>
           </div>

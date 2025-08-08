@@ -1,5 +1,6 @@
 import { Progress } from '@ark-ui/react/progress'
 import Table from "@app/pages/oneList/components/Table"
+import ButtonAddTask from '@app/pages/oneList/components/ButtonAddTask'
 
 const Page = () => {
   return (
@@ -31,10 +32,8 @@ const Page = () => {
             <Table />
           </div>
           <div className="w-full flex flex-col items-center justify-center gap-4">
-            <button className="w-full rounded-full p-2 border-2 border-blue-700 hover:bg-blue-400 transition-all duration-200 ease-out">
-              add task
-            </button>
-            <button className="w-full rounded-full p-2 border-2 border-red-700 hover:bg-red-400 transition-all duration-200 ease-out">
+          <ButtonAddTask />
+            <button className="w-full rounded-full p-2 border-2 border-red-700 hover:bg-red-400 transition-all duration-200 ease-out cursor-pointer cursor-pointer">
               remove task
             </button>
           </div>
