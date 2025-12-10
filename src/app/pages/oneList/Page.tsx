@@ -2,7 +2,7 @@ import { Progress } from '@ark-ui/react/progress'
 import Table from "@app/pages/oneList/components/Table"
 import ButtonAddTask from '@app/pages/oneList/components/ButtonAddTask'
 
-const Page = () => {
+const OneListPage = () => {
   return (
     <div className="w-full">
       <header className="w-full text-center mb-4 flex flex-col items-center justify-center gap-2">
@@ -43,4 +43,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default OneListPage

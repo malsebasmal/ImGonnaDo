@@ -1,6 +1,6 @@
 import List from "@app/pages/allList/components/List"
 
-const Page = () => {
+const AllListPage = () => {
   return (
     <div className="w-full">
       <header className="w-full text-center mb-6">
@@ -28,4 +28,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default AllListPage

@@ -9,6 +9,8 @@
     "paths": {
       "@app/*": ["app/*"],
       "@auth/*": ["auth/*"],
+      "@alllist": ["app/pages/allList/*"],
+      "@onelist": ["app/pages/oneList/*"]
     }
   }
 }
